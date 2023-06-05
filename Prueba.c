@@ -23,14 +23,14 @@ int main(void){
 
     printf("Bienvenido al juego del laberinto\n");
     printf("1.Jugar\n2.Creditos\n3.Salir\n");
-    printf("Ingrese la opcion que desea realizar.\n");
-    scanf("%d", &opc);
-    while(opc<=0 || opc>3){
+    do{
+        printf("Ingrese la opcion que desea realizar.\n");
+        scanf("%d", &opc);
+        while(opc<=0 || opc>3){
         printf("Dato invalido.\n");
         printf("Ingrese la opcion que desea realizar.\n");
         scanf("%d", &opc);
     }
-    do{
         switch(opc){
             case 1:
             juegoNuevo(x,y,cmov);
