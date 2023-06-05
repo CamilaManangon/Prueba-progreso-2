@@ -1,16 +1,25 @@
 #include <stdio.h>
 #include "maze.h"
+#include "player.h"
+
+void juegoNuevo(int x, int y, int cmov){
+    char mov;
+    imprimirMatriz(x,y);
+    do{
+        
+        printf("Ingrese movimiento que quiere realizar: ");
+        scanf("%c",&mov);
+        printf("\n");
+        moverme(x, y, mov, cmov);
+        imprimirMatriz(x,y);
+    }while(x!=4 && x!=4);
+}
 
 int main(void){
     int opc;
-    int maze[5][5] = {
-    {0,1,0,0,0},
-    {0,1,1,1,0},
-    {0,0,0,0,0},
-    {0,1,0,1,0},
-    {1,0,0,1,0}
-    };
-
+    int x = 0;//filas
+    int y = 0;//columnas
+    int cmov = 0;
 
     printf("Bienvenido al juego del laberinto\n");
     printf("1.Jugar\n2.Creditos\n3.Salir\n");
@@ -23,11 +32,14 @@ int main(void){
     }
     do{
         switch(opc){
-        case 2:
-        printf("Camila Manangon\nID Banner: A00108321\n");
-        break;
-        default:
-        printf("Saliste del menu.\n");
+            case 1:
+            juegoNuevo(x,y,cmov);
+            break;
+            case 2:
+            printf("Camila Manangon\nID Banner: A00108321\n");
+            break;
+            default:
+            printf("Saliste del menu.\n");
         }
     } while(opc!=3);
     return 0;
