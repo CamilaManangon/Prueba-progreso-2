@@ -4,7 +4,6 @@
 //comprobar que no salga de la matriz
 int comprobarMov(int x, int y){
     if(x<0 || x>4 || y<0 || y>4){
-        printf("Movimiento no valido.\n");
         return 0;
     }else{
         return 1;
@@ -16,6 +15,7 @@ void moverme(int x, int y, char mov, int cmov){
         case 'a':
         if(comprobarMov(x,y-1)==1 && comprobarPared(x,y-1)==1){
             y = y - 1;
+            x = x;
             cmov = cmov + 1;
         }else{
             printf("Movimiento invalido.\n");
@@ -27,6 +27,7 @@ void moverme(int x, int y, char mov, int cmov){
         comprobarPared(x-1,y);
         if(comprobarMov(x-1,y)==1 && comprobarPared(x-1,y)==1){
             x = x - 1;
+            y = y;
             cmov = cmov + 1;
         }else{
             printf("Movimiento invalido.\n");
@@ -38,6 +39,7 @@ void moverme(int x, int y, char mov, int cmov){
         comprobarPared(x+1,y);
         if(comprobarMov(x+1,y)==1 && comprobarPared(x+1,y)==1){
             x = x + 1;
+            y = y;
             cmov = cmov + 1;
         }else{
             printf("Movimiento invalido.\n");
@@ -50,6 +52,7 @@ void moverme(int x, int y, char mov, int cmov){
         comprobarPared(x,y+1);
         if(comprobarMov(x,y+1)==1 && comprobarPared(x,y+1)==1){
             y = y + 1;
+            x = x;
             cmov = cmov + 1;
         }else{
             printf("Movimiento invalido.\n");

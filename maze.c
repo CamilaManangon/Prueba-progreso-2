@@ -29,7 +29,6 @@ void imprimirMatriz(int x, int y){
 //funcion para comprobar movimiento
 int comprobarPared(int x, int y){
     if(maze[x][y]==1){
-        printf("Movimiento invalido.\n");
         return 0;
     }else{
         return 1;

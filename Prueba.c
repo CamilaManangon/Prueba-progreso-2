@@ -6,7 +6,6 @@ void juegoNuevo(int x, int y, int cmov){
     char mov;
     imprimirMatriz(x,y);
     do{
-        
         printf("Ingrese movimiento que quiere realizar: ");
         scanf("%c",&mov);
         printf("\n");
